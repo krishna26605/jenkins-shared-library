@@ -1,0 +1,5 @@
+def call (String doc_username , String doc_password , String Image_name, String doc_Image_name , String img_tag ){
+                sh "docker login -u ${doc_username} -p ${doc_password}"
+                sh "docker image tag ${Image_name} ${doc_Image_name}:${img_tag}"
+                sh "docker push ${doc_Image_name}:${img_tag} "
+}
